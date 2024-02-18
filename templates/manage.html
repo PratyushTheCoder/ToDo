@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% block title %}
+    Manage ToDo
+{% endblock title %}
+{% block body %}
+<div class="container">
+    <h2>Your ToDo's</h2>
+    {% if allTodo|length == 0 %}
+    <div class="alert alert-warning d-flex justify-content-center" role="alert">
+      <b> No ToDo found. Create your first <a href="/create">ToDo</a> Now </b>
+    </div>    
+    {% else %}
+    <table class="table mt-10 bg-dark br-t" data-bs-theme="dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ToDo</th>
+          <th scope="col">Description</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Creation</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for todo in allTodo %}  
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{todo.title}}</td>
+            <td>{{todo.desc}}</td>
+            <td>{{todo.pri}}</td>
+            <td>{{todo.date_created}}</td>
+            <td>
+              <a href="/delete/{{todo.sno}}" type="submit" class="btn btn-outline-success btn-sm mx-1 my-1">Completed</>
+              <a href="/update/{{todo.sno}}" type="submit" class="btn btn-outline-primary btn-sm mx-1 my-1">Update</>
+            </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  
+</div>
+{% endblock body %}
