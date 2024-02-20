@@ -1,0 +1,10 @@
+{
+    "workbench.colorCustomizations": {
+        "[One Dark Modern]": {
+            "activityBar.background": "#282626"
+        },
+        "[One Dark Pro Mix]": {
+            "terminal.background": "#21252b"
+        }
+    }
+}

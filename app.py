@@ -12,7 +12,7 @@ class ToDo(db.Model):
     title = db.Column(db.String(200), nullable=False)
     desc = db.Column(db.String(500),nullable=False)
     pri = db.Column(db.String(50),nullable=False)
-    check = db.Column(db.Boolean,nullable=True)
+    # check = db.Column(db.Boolean,nullable=True)
     date_created = db.Column(db.DateTime,default=datetime.utcnow())
 
     def __repr__(self) -> str:
